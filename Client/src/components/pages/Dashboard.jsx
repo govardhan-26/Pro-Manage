@@ -12,7 +12,8 @@ const Dashboard = () => {
                     <img src={signin} className='wel-pic' alt="pic" />
                 </div>
                 <div className='welcome-text'>
-                    <h1></h1>
+                    <h1>Welcome abroad my friend</h1>
+                    <p>just a couple of clicks and we start</p>
                 </div>
             </div>
         </div>
