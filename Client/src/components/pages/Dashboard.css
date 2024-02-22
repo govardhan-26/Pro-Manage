@@ -1,0 +1,67 @@
+.dash-container{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+
+}
+
+.welcome{
+    height:100vh;
+    width:1008.84px;
+    border : 2px solid red;
+    background-color:  #17A2B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin-container{
+    height: 100%;
+    width : 669.8px;
+    border : 2px solid blue;
+}
+
+.welcome-content{
+    width: 505.8px;
+    height: 505.8px;
+    border : 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.pic-bg{
+    position: absolute;
+    height:304.58px;
+    width: 304.58px;
+    top : 37.21px;
+    /* right: 30.13px; */
+}
+
+.welcome-pic{
+    width: 505.8px;
+    height: 505.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    & > *{
+        width: 260.86px;
+        height: 301.82px;
+    }
+}
+.wel-pic{
+    height: 301.82px;
+    width : 260.86px;
+    z-index: 3;
+}
+
+.pic-bg{
+    background-color: #317F8B;
+    width: 304.58px;
+    height : 304.58px;
+    border-radius: 50%;
+}
+
