@@ -32,14 +32,6 @@
     position: relative;
 }
 
-.pic-bg{
-    position: absolute;
-    height:304.58px;
-    width: 304.58px;
-    top : 37.21px;
-    /* right: 30.13px; */
-}
-
 .welcome-pic{
     width: 505.8px;
     height: 505.8px;
@@ -52,6 +44,13 @@
         height: 301.82px;
     }
 }
+
+.welcome-text{
+    width: 433px;
+    height : 97px;
+    position: absolute;
+}
+
 .wel-pic{
     height: 301.82px;
     width : 260.86px;
@@ -63,5 +62,8 @@
     width: 304.58px;
     height : 304.58px;
     border-radius: 50%;
+    position: absolute;
+    top : 64.78px;
+    right : 92.34px;
 }
 
