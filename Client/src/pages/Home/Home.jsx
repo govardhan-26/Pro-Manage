@@ -1,4 +1,5 @@
-import { DangerButton, PrimaryButton } from "../../components/index.js";
+import { RegisterButton } from "../../components";
+import ModalComponent from "../../components/Modal/DeleteModal";
 const Home = () => {
   return (
     <div
@@ -7,8 +8,18 @@ const Home = () => {
         margin: "40px",
       }}
     >
-      <PrimaryButton text="hello" />
-      <DangerButton text="clear" />
+      <RegisterButton
+        text="register"
+        color="#ffffff"
+        border="none"
+        bg="#17A2B8"
+      />
+      <RegisterButton
+        text="register"
+        color="#17A2B8"
+        border="1px solid #17A2B8"
+        bg="#ffffff"
+      />
     </div>
   );
 };
