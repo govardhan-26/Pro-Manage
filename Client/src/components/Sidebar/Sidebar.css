@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+.sidebar-container {
+  width: 224px;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  border-right: 1px solid #edf5fe;
+  color: #000000;
+  box-sizing: border-box;
+}
+/* 
+ * NOTE: if the items are active then black else #707070
+ * */
+.sidebar-items {
+  height: 24px;
+  margin-left: 43px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  align-items: center;
+  line-height: 24px;
+}
+.sidebar-head {
+  margin-top: 32px;
+  width: 139px;
+}
+.sidebar-head > p {
+  font-weight: 700;
+}
+
+.sidebar-board {
+  margin-top: 45px;
+  width: 89px;
+}
+.sidebar-analytics {
+  margin-top: 36px;
+  width: 115px;
+  color: #707070;
+}
+
+.sidebar-settings {
+  margin-top: 32px;
+  width: 106px;
+  color: #707070;
+}
