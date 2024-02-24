@@ -1,4 +1,0 @@
-# Pro Manage
-
-- server
-- client

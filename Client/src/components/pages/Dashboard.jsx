@@ -23,10 +23,17 @@ const Dashboard = () => {
             <label htmlFor="Login">Login</label>
           </div>
           <div className="login-inputs">
-            <Mail/>
-            <input type="text" placeholder="Email" />
-            <LockKeyhole></LockKeyhole>
-            <input type="password" />
+            <div>
+              <Mail/>
+              <input type="text" placeholder="Email" />
+            </div>
+            <div>
+              <LockKeyhole></LockKeyhole>
+              <input type="password" />
+            </div>
+          </div>
+          <div className="login-buttons">
+            
           </div>
         </form>
       </div>
