@@ -1,5 +1,5 @@
 import "./Login.css";
-import signin from "../assets/signin.svg";
+import signin from "../../assets/signin.svg";
 import { Eye, Mail, LockKeyhole } from "lucide-react";
 import { useState } from "react";
 const Login = () => {
@@ -28,12 +28,12 @@ const Login = () => {
           </div>
           <div className="login-inputs">
             <div className="login-input">
-              <Mail className="icon"/>
+              <Mail className="icon" />
               <input type="text" placeholder="Email" />
-            </div >
+            </div>
             <div className="login-input">
               <LockKeyhole className="icon" />
-              <input type="password" placeholder="Password"/>
+              <input type="password" placeholder="Password" />
             </div>
           </div>
           <div className="buttons">
