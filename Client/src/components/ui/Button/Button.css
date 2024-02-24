@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+.button-primary {
+  padding: 17px 4px;
+  border-radius: 12px;
+  height: 45px;
+  background-color: #17a2bb;
+  color: #ffffff;
+  border: none;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+.button-danger {
+  padding: 17px 4px;
+  border-radius: 12px;
+  height: 45px;
+  color: #cf3636;
+  border: 1px solid #cf3636;
+  background-color: #ffffff;
+}

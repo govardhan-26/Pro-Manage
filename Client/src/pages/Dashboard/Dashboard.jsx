@@ -1,9 +1,11 @@
-import { Sidebar } from "../../components/index.js";
+// import { Cardholder } from "../../components/CardHolder/Cardholder.jsx";
+import { Sidebar, Cardholder } from "../../components/index.js";
+import "./Dashboard.css";
 const Dashboard = () => {
   return (
-    <div>
+    <div className="Dash-container">
       <Sidebar />
-      <div>Right side</div>
+      {/* <Cardholder /> */}
     </div>
   );
 };
