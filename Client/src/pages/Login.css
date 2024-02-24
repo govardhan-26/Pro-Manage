@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.dash-container {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.welcome {
+  height: 100vh;
+  width: 1008.84px;
+  background-color: #17a2b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-container {
+  height: 100%;
+  width: 669.8px;
+}
+
+.welcome-content {
+  width: 505.8px;
+  height: 505.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.welcome-pic {
+  width: 505.8px;
+  height: 505.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  & > * {
+    width: 260.86px;
+    height: 301.82px;
+  }
+}
+
+.welcome-text {
+  width: 433px;
+  height: 97px;
+  position: absolute;
+  top: 449.29px;
+  right: 25.94px;
+  display: flex;
+  flex-direction: column;
+  & > h1 {
+    font-size: 33.08px;
+    height: 60%;
+    color: #ffffff;
+    font-weight: 600px;
+    line-height: 66.15px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+  }
+  & > p {
+    font-size: 19.29px;
+    height: 50%;
+    color: #ffffff;
+    font-weight: 400px;
+    line-height: 38.59px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+.wel-pic {
+  height: 301.82px;
+  width: 260.86px;
+  z-index: 3;
+}
+
+.pic-bg {
+  background-color: #317f8b;
+  width: 304.58px;
+  height: 304.58px;
+  border-radius: 50%;
+  position: absolute;
+  top: 64.78px;
+  right: 92.34px;
+}
+
+.signin-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-label {
+  height: 89.1px;
+  width: 87px;
+  border: 2px solid red;
+  padding: 0px, 0px, 44.1px, 0px;
+  gap: 13.78px;
+  margin-top: 25%;
+  & > label {
+    height: 45px;
+    width: 87px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 33.08px;
+    font-weight: 600;
+    line-height: 45.4px;
+    color: #343434;
+  }
+}
+
+.login-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 439.39px;
+  height: 132.31px;
+  & > input {
+    height: 55.13px;
+    width: 493.39px;
+    border-radius: 11.03px;
+    border: 1.38px solid #d0d0d0;
+  }
+}
