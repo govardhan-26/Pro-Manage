@@ -1,7 +1,12 @@
 import "./Login.css";
 import signin from "../assets/signin.svg";
 import { Eye, Mail, LockKeyhole } from "lucide-react";
+import { useState } from "react";
 const Login = () => {
+  const [loginInput, setLoginInput] = useState({
+    email: "",
+    password: "",
+  });
   return (
     <div className="dash-container">
       <div className="welcome">
