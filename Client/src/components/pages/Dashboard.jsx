@@ -1,6 +1,8 @@
 import React from 'react'
 import './Dashboard.css'
 import signin from "../../assets/signin.svg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
   return (
@@ -18,7 +20,16 @@ const Dashboard = () => {
             </div>
         </div>
         <div className='signin-container'>
-
+            <form action="" className='signin-form'>
+                <div className='login-label'>
+                    <label htmlFor="Login" >Login</label>
+                </div>
+                <div className='login-inputs'>
+                    <i class="icon fas fa-envelope"></i>
+                    <input type="text" placeholder='Email' />
+                    <input type="password" />
+                </div>
+            </form>
         </div>
     </div>
   )
