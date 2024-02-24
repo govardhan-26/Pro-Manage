@@ -1,9 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import signin from "../../assets/signin.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
+import {Eye, Mail,LockKeyhole} from "lucide-react"
 const Dashboard = () => {
   return (
     <div className="dash-container">
@@ -25,8 +23,9 @@ const Dashboard = () => {
             <label htmlFor="Login">Login</label>
           </div>
           <div className="login-inputs">
-            <i className="icon fas fa-envelope"></i>
+            <Mail/>
             <input type="text" placeholder="Email" />
+            <LockKeyhole></LockKeyhole>
             <input type="password" />
           </div>
         </form>
