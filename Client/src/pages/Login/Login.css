@@ -157,6 +157,8 @@
   margin-top: 44.1px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-button{
@@ -167,4 +169,9 @@
   gap: 11.03px;
   background-color: #17A2B8;
   color: white;
+}
+
+.no-acnt{
+  position: relative;
+  
 }

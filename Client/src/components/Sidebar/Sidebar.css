@@ -6,6 +6,8 @@
   border-right: 1px solid #edf5fe;
   color: #000000;
   box-sizing: border-box;
+  /* display: flex; */
+  flex-direction: column;
 }
 /* 
  * NOTE: if the items are active then black else #707070
@@ -20,7 +22,7 @@
   line-height: 24px;
 }
 .sidebar-head {
-  margin-top: 32px;
+  /* margin-top: 32px; */
   width: 139px;
 }
 .sidebar-head > p {
@@ -28,17 +30,43 @@
 }
 
 .sidebar-board {
-  margin-top: 45px;
+  /* margin-top: 45px; */
   width: 89px;
 }
+.sidebar-element-head{
+  height: 43px;
+  margin-top: 17px;
+  display: flex;
+  align-items: center;
+}
+.sidebar-element-tails{
+  height: 140px;
+  margin-top: 26.5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5.5px;
+}
+.sidebar-element{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  width: 224px;
+  height: 43px;
+}
+.sidebar-element:hover{
+  background-color: #4391ED1A;
+  cur
+}
+
 .sidebar-analytics {
-  margin-top: 36px;
+  /* margin-top: 36px; */
   width: 115px;
   color: #707070;
 }
 
 .sidebar-settings {
-  margin-top: 32px;
+  /* margin-top: 32px; */
   width: 106px;
   color: #707070;
 }

@@ -38,7 +38,7 @@ const Login = () => {
           </div>
           <div className="buttons">
             <button className="login-button">Log in</button>
-            <p>Have no account yet ?</p>
+            <p className="no-acnt">Have no account yet ?</p>
           </div>
         </form>
       </div>
