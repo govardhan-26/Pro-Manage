@@ -98,7 +98,6 @@
 .login-label {
   height: 89.1px;
   width: 87px;
-  border: 2px solid red;
   padding: 0px, 0px, 44.1px, 0px;
   gap: 13.78px;
   margin-top: 25%;
@@ -116,12 +115,56 @@
 .login-inputs {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 439.39px;
   height: 132.31px;
-  & > input {
+}
+
+.login-input > input{
     height: 55.13px;
     width: 493.39px;
     border-radius: 11.03px;
     border: 1.38px solid #d0d0d0;
-  }
+    &::placeholder{
+      font-family: "open sans", sans-serif;
+      font-weight: 400;
+      font-size: 19.29px;
+      line-height: 26.28px;
+      padding-left : 47px;
+    }
+
+}
+
+.login-input{
+  position: relative;
+  display: flex;
+  
+}
+
+.icon{
+  position: absolute;
+  left : 10px;
+  top : 9px;
+  height : 33.08px;
+  width : 33.08px;
+  opacity : 50%;
+}
+
+.buttons{
+  height: 191.23px;
+  width: 493.39px;
+  gap: 22.05px;
+  margin-top: 44.1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-button{
+  width: 493.39px;
+  height: 55.13px;
+  border-radius: 55.13px;
+  padding: 0 132.31px 0 132.31px;
+  gap: 11.03px;
+  background-color: #17A2B8;
+  color: white;
 }

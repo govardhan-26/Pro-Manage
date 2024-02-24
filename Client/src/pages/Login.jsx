@@ -27,10 +27,18 @@ const Login = () => {
             <label htmlFor="Login">Login</label>
           </div>
           <div className="login-inputs">
-            <Mail />
-            <input type="text" placeholder="Email" />
-            <LockKeyhole></LockKeyhole>
-            <input type="password" />
+            <div className="login-input">
+              <Mail className="icon"/>
+              <input type="text" placeholder="Email" />
+            </div >
+            <div className="login-input">
+              <LockKeyhole className="icon" />
+              <input type="password" placeholder="Password"/>
+            </div>
+          </div>
+          <div className="buttons">
+            <button className="login-button">Log in</button>
+            <p>Have no account yet ?</p>
           </div>
         </form>
       </div>
