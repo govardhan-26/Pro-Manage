@@ -1,12 +1,4 @@
-import {
-  Badge,
-  DateBadge,
-  Ellipse,
-  GreenDateBadge,
-  PriorityHolder,
-  RedDateBadge,
-  InputModal,
-} from '../../components'
+import { LoginInput, TaskInput, Taskholder } from '../../components'
 const Home = () => {
   return (
     <div
@@ -15,8 +7,23 @@ const Home = () => {
         margin: '40px',
       }}
     >
-     
-     <InputModal/>
+      <LoginInput
+        placeholder="email"
+        type="text"
+        icon="email"
+      />
+      <br />
+      <LoginInput
+        placeholder="password"
+        type="password"
+        icon="password"
+      />
+      <br />
+      <LoginInput
+        placeholder="person"
+        type="text"
+        icon="name"
+      />
     </div>
   )
 }
