@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .dash-container {
   height: 100vh;
@@ -58,7 +58,7 @@
     font-weight: 600px;
     line-height: 66.15px;
     text-align: center;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
   & > p {
     font-size: 19.29px;
@@ -67,7 +67,7 @@
     font-weight: 400px;
     line-height: 38.59px;
     text-align: center;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 }
 
@@ -104,7 +104,7 @@
   & > label {
     height: 45px;
     width: 87px;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 33.08px;
     font-weight: 600;
     line-height: 45.4px;
@@ -120,37 +120,7 @@
   height: 132.31px;
 }
 
-.login-input > input{
-    height: 55.13px;
-    width: 493.39px;
-    border-radius: 11.03px;
-    border: 1.38px solid #d0d0d0;
-    &::placeholder{
-      font-family: "open sans", sans-serif;
-      font-weight: 400;
-      font-size: 19.29px;
-      line-height: 26.28px;
-      padding-left : 47px;
-    }
-
-}
-
-.login-input{
-  position: relative;
-  display: flex;
-  
-}
-
-.icon{
-  position: absolute;
-  left : 10px;
-  top : 9px;
-  height : 33.08px;
-  width : 33.08px;
-  opacity : 50%;
-}
-
-.buttons{
+.buttons {
   height: 191.23px;
   width: 493.39px;
   gap: 22.05px;
@@ -161,17 +131,16 @@
   align-items: center;
 }
 
-.login-button{
+.login-button {
   width: 493.39px;
   height: 55.13px;
   border-radius: 55.13px;
   padding: 0 132.31px 0 132.31px;
   gap: 11.03px;
-  background-color: #17A2B8;
+  background-color: #17a2b8;
   color: white;
 }
 
-.no-acnt{
+.no-acnt {
   position: relative;
-  
 }
