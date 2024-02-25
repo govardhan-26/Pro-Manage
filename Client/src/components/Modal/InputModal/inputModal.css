@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;400&display=swap');
+.input-m-container {
+  width: 666px;
+  height: 596px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 1px solid red;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+h2:after {
+  content: ' *';
+  color: red;
+}
+.title-m {
+  padding: 24px 39px;
+  width: 588px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.title-m > input {
+  border: 1px solid #e2e2e2;
+  background-color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 4px;
+  height: 44px;
+  box-shadow: 0 1px 2px 0 rgba(77, 64, 85, 0.1);
+}
+.title-m > input::placeholder {
+  color: #9b959f;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+.title-m > input:focus {
+  outline-color: #dad7d7;
+}
+
+.priority-m {
+  padding: 0 39px;
+  height: 31px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  width: 592px;
+}
+.priority-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 466px;
+}
+.checklist-m {
+  padding: 0 39px;
+  margin-top: 32px;
+}
+.scrollable-m {
+  margin-top: 19px;
+  padding: 0 39px;
+  width: 588px;
+  height: 223px;
+  border: 1px solid brown;
+  margin-bottom: 85px;
+}
+
+.buttons-m{
+  padding:0 39px;
+  display: flex;
+  gap: 66px;
+}

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+.badge-container {
+  height: 22px;
+  padding: 5px 10px;
+  background-color: #eeecec;
+  border-radius: 8px;
+  color:#767575;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+}
