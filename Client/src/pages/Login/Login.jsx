@@ -2,6 +2,7 @@ import "./Login.css";
 import signin from "../../assets/signin.svg";
 import { Eye, Mail, LockKeyhole } from "lucide-react";
 import { useState } from "react";
+import { RegisterButton } from "../../components";
 const Login = () => {
   const [loginInput, setLoginInput] = useState({
     email: "",
@@ -37,8 +38,19 @@ const Login = () => {
             </div>
           </div>
           <div className="buttons">
-            <button className="login-button">Log in</button>
+            <RegisterButton
+              text="register"
+              color="#ffffff"
+              border="none"
+              bg="#17A2B8"
+            />
             <p className="no-acnt">Have no account yet ?</p>
+            <RegisterButton
+              text="Register"
+              color="#17A2B8"
+              border="1px solid #17A2B8"
+              bg="#ffffff"
+            />
           </div>
         </form>
       </div>

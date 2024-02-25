@@ -1,23 +1,24 @@
 import "./Button.css";
-const PrimaryButton = ({ text = "xyz", width = "300px" }) => {
+const Button = ({
+  text = "xyz",
+  shadow = "",
+  width = "300px",
+  bg,
+  color,
+  border,
+}) => {
   const buttonStyle = {
     width: width,
+    backgroundColor: bg,
+    color: color,
+    border: border,
+    boxShadow: shadow,
   };
   return (
-    <button style={buttonStyle} className="button button-primary">
+    <button style={buttonStyle} className="button ">
       {text}
     </button>
   );
 };
 
-const DangerButton = ({ text = "del", width = "300px" }) => {
-  const buttonStyle = {
-    width: width,
-  };
-  return (
-    <button style={buttonStyle} className=" button button-danger">
-      {text}
-    </button>
-  );
-};
-export { PrimaryButton, DangerButton };
+export { Button };
