@@ -1,6 +1,6 @@
 import "./Button.css";
 const Button = ({
-  text = "xyz",
+  children="",
   shadow = "",
   width = "300px",
   bg,
@@ -16,7 +16,7 @@ const Button = ({
   };
   return (
     <button style={buttonStyle} className="button ">
-      {text}
+      {children}
     </button>
   );
 };

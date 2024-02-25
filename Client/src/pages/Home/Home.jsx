@@ -1,27 +1,24 @@
-import { RegisterButton } from "../../components";
-import ModalComponent from "../../components/Modal/DeleteModal";
+import {
+  Badge,
+  DateBadge,
+  Ellipse,
+  GreenDateBadge,
+  PriorityHolder,
+  RedDateBadge,
+  InputModal,
+} from '../../components'
 const Home = () => {
   return (
     <div
       className=""
       style={{
-        margin: "40px",
+        margin: '40px',
       }}
     >
-      <RegisterButton
-        text="register"
-        color="#ffffff"
-        border="none"
-        bg="#17A2B8"
-      />
-      <RegisterButton
-        text="register"
-        color="#17A2B8"
-        border="1px solid #17A2B8"
-        bg="#ffffff"
-      />
+     
+     <InputModal/>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
