@@ -1,17 +1,17 @@
-import { useState } from 'react'
 import { LoginInput, PasswordInput, RegisterButton, Welcome } from '../../components'
-import './Login.css'
-const Login = () => {
-  const [loginInput, setLoginInput] = useState({
-    email: '',
-    password: '',
-  })
+import './Register.css'
+const Register = () => {
   return (
     <div className="dash-container">
-     <Welcome/> 
+      <Welcome />
       <div className="form-container">
-        <h3>Login</h3>
-        <div className="inputs-login">
+        <h4>Register</h4>
+        <div className="register-login">
+          <LoginInput
+            placeholder="person"
+            type="name"
+            icon="name"
+          />
           <LoginInput
             placeholder="email"
             type="text"
@@ -19,6 +19,11 @@ const Login = () => {
           />
           <PasswordInput
             placeholder="password"
+            type="password"
+            icon="password"
+          />
+          <PasswordInput
+            placeholder="confirm password"
             type="password"
             icon="password"
           />
@@ -43,4 +48,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
