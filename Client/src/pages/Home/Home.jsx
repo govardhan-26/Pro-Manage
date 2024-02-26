@@ -1,29 +1,10 @@
-import { LoginInput, TaskInput, Taskholder } from '../../components'
+import { LoginInput, TaskInput, Taskholder,Taskshow } from '../../components'
 const Home = () => {
   return (
-    <div
-      className=""
-      style={{
-        margin: '40px',
-      }}
-    >
-      <LoginInput
-        placeholder="email"
-        type="text"
-        icon="email"
-      />
-      <br />
-      <LoginInput
-        placeholder="password"
-        type="password"
-        icon="password"
-      />
-      <br />
-      <LoginInput
-        placeholder="person"
-        type="text"
-        icon="name"
-      />
+    <div style={{
+      margin:"40px"
+    }}>
+      <Taskshow/>
     </div>
   )
 }

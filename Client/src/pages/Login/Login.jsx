@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import signin from '../../assets/signin.svg'
-import { LoginInput, RegisterButton } from '../../components'
+import { LoginInput, PasswordInput, RegisterButton, Welcome } from '../../components'
 import './Login.css'
 const Login = () => {
   const [loginInput, setLoginInput] = useState({
@@ -9,22 +8,7 @@ const Login = () => {
   })
   return (
     <div className="dash-container">
-      <div className="welcome">
-        <div className="welcome-content">
-          <div className="pic-bg"></div>
-          <div className="welcome-pic">
-            <img
-              src={signin}
-              className="wel-pic"
-              alt="pic"
-            />
-          </div>
-          <div className="welcome-text">
-            <h1>Welcome abroad my friend</h1>
-            <p>just a couple of clicks and we start</p>
-          </div>
-        </div>
-      </div>
+     <Welcome/> 
       <div className="form-container">
         <h3>Login</h3>
         <div className="inputs-login">
@@ -33,8 +17,7 @@ const Login = () => {
             type="text"
             icon="email"
           />
-          <br />
-          <LoginInput
+          <PasswordInput
             placeholder="password"
             type="password"
             icon="password"

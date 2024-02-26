@@ -1,7 +1,9 @@
-export { LoginInput } from "./ui/LoginInput/LoginInput.jsx";
-export { Analytics } from "./Analytics/Analytics.jsx";
+export { Taskshow } from "./ui/Taskshow/Taskshow.jsx";
 
-export { InputModal } from "./Modal/InputModal/inputModal.jsx";
+export {PasswordInput} from "./ui/LoginInput/PasswordInput.jsx";
+
+export { Welcome } from "./WelcomeLayout/Welcome.jsx";
+export { LoginInput } from "./ui/LoginInput/LoginInput.jsx";
 
 export { Taskholder } from "./ui/TaskHolder/Taskholder.jsx";
 export { Cardholder } from "./CardHolder/Cardholder.jsx";
