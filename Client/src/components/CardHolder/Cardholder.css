@@ -2,5 +2,5 @@
   width: 360px;
   border-radius: 10px;
   background-color: #eef2f5;
-  height: 796px;
+  height: calc(100vh - 160px);
 }

@@ -1,3 +1,5 @@
+export { Dropdown } from './ui/Dropdown/Dropdown.jsx'
+
 export { Analytics } from './Analytics/Analytics.jsx'
 
 export { PasswordInput } from './ui/LoginInput/PasswordInput.jsx'
@@ -22,3 +24,4 @@ export { PriorityHolder } from './ui/PriorityHolder/PriorityHolder.jsx'
 export { RegisterButton } from './ui/RegisterButton/Register.jsx'
 export { Taskholder } from './ui/TaskHolder/Taskholder.jsx'
 export { TaskInput } from './ui/taskInput/taskInput.jsx'
+
