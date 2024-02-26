@@ -1,3 +1,5 @@
+export { Analytics } from "./Analytics/Analytics.jsx";
+
 export { InputModal } from "./Modal/InputModal/inputModal.jsx";
 
 export {PriorityHolder} from "./ui/PriorityHolder/PriorityHolder.jsx";
