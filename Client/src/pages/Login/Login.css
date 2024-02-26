@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 .dash-container {
   height: 100vh;
@@ -11,12 +11,12 @@
 }
 
 .form-container > h3 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 33.08px;
   font-weight: 600;
   line-height: 45.04px;
   color: #343434;
-  margin-top: 261.5px;
+  margin-top: 180px;
   padding: 0 291.5px;
   margin-bottom: 88px;
 }
@@ -28,7 +28,7 @@
   flex-direction: column;
   margin: 0 auto;
   margin-bottom: 44px;
-  gap:22.05px;
+  gap: 22.05px;
 }
 .buttons-login {
   width: 493.39px;
@@ -41,7 +41,7 @@
   margin-top: 33.8px;
   margin-bottom: 22px;
   font-weight: 400;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   line-height: 26.28px;
   font-size: 19.29px;
   color: #828282;

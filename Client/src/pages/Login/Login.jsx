@@ -1,23 +1,35 @@
-import { useState } from 'react'
-import { LoginInput, PasswordInput, RegisterButton, Welcome } from '../../components'
-import './Login.css'
+import { useState } from "react";
+import {
+  LoginInput,
+  PasswordInput,
+  RegisterButton,
+  Welcome,
+} from "../../components";
+import "./Login.css";
 const Login = () => {
   const [loginInput, setLoginInput] = useState({
-    email: '',
-    password: '',
-  })
+    email: "",
+    password: "",
+  });
+  console.log(loginInput);
   return (
     <div className="dash-container">
-     <Welcome/> 
+      <Welcome />
       <div className="form-container">
         <h3>Login</h3>
         <div className="inputs-login">
           <LoginInput
             placeholder="email"
+            name="email"
+            value={loginInput.email}
+            setValue={setLoginInput}
             type="text"
             icon="email"
           />
           <PasswordInput
+            value={loginInput.password}
+            name="password"
+            setValue={setLoginInput}
             placeholder="password"
             type="password"
             icon="password"
@@ -40,7 +52,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
