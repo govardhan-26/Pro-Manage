@@ -13,8 +13,11 @@ const Dashboard = () => {
         <div className="analytics-heading">
             <h1>Analytics</h1>
         </div>
-        <Analytics items={items} />
-        <Analytics items={items2} />
+        <div className="analytic-card-container">
+          <Analytics items={items} />
+          <Analytics items={items2} />
+
+        </div>
       </div>      
     </div>
   );

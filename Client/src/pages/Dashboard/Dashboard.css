@@ -18,7 +18,12 @@
   margin-left: 44px;
 }
 
-
+.analytic-card-container{
+  display: flex;
+  column-gap: 17px;
+     margin-left: 44px;
+    margin-top: 49px;
+}
   
 
 
