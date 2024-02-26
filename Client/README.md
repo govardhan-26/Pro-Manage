@@ -82,3 +82,25 @@
 - moderate #18B0FF
 
 ```
+
+```js
+
+   <LoginInput
+        placeholder="email"
+        type="text"
+        icon="email"
+      />
+     
+      <LoginInput
+        placeholder="password"
+        type="password"
+        icon="password"
+      />
+     
+      <LoginInput
+        placeholder="person"
+        type="text"
+        icon="name"
+      />
+
+```
