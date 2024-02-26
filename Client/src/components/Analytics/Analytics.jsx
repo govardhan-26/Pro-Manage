@@ -1,4 +1,3 @@
-import React from 'react'
 import './Analytics.css'
 import { Ellipse } from '../ui/Ellipse/Ellipse'
 const Analytics = ({items}) => {

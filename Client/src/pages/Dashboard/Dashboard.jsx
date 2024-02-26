@@ -1,24 +1,15 @@
-// import { Cardholder } from "../../components/CardHolder/Cardholder.jsx";
-import { Sidebar, Cardholder, Ellipse, Analytics } from "../../components/index.js";
-import "./Dashboard.css";
 
+import { Sidebar } from "../../components/index.js";
+import AnalyticsPage from "../Analytics/Analytics.jsx";
+import "./Dashboard.css";
+import SettingsPage from "../Settings/Settings.jsx";
 const Dashboard = () => {
-  const items = ['Backlog Tasks', 'Todo Tasks', 'In-Progress Tasks', 'Completed Tasks']
-  const items2 = ['Low Priority', 'Moderate Priority', 'High Priority', 'Due Date Tasks']
-  
+
   return (
     <div className="Dash-container">
       <Sidebar />
-      <div className="analytics-container">
-        <div className="analytics-heading">
-            <h1>Analytics</h1>
-        </div>
-        <div className="analytic-card-container">
-          <Analytics items={items} />
-          <Analytics items={items2} />
-
-        </div>
-      </div>      
+      {/* <AnalyticsPage/> */}
+      <SettingsPage/>
     </div>
   );
 };
