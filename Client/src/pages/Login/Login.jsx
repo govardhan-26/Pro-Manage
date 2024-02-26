@@ -1,20 +1,23 @@
-import "./Login.css";
-import signin from "../../assets/signin.svg";
-import { Eye, Mail, LockKeyhole } from "lucide-react";
-import { useState } from "react";
-import { RegisterButton } from "../../components";
+import { useState } from 'react'
+import signin from '../../assets/signin.svg'
+import { LoginInput, RegisterButton } from '../../components'
+import './Login.css'
 const Login = () => {
   const [loginInput, setLoginInput] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: '',
+  })
   return (
     <div className="dash-container">
       <div className="welcome">
         <div className="welcome-content">
           <div className="pic-bg"></div>
           <div className="welcome-pic">
-            <img src={signin} className="wel-pic" alt="pic" />
+            <img
+              src={signin}
+              className="wel-pic"
+              alt="pic"
+            />
           </div>
           <div className="welcome-text">
             <h1>Welcome abroad my friend</h1>
@@ -22,40 +25,39 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="signin-container">
-        <form action="" className="signin-form">
-          <div className="login-label">
-            <label htmlFor="Login">Login</label>
-          </div>
-          <div className="login-inputs">
-            <div className="login-input">
-              <Mail className="icon" />
-              <input type="text" placeholder="Email" />
-            </div>
-            <div className="login-input">
-              <LockKeyhole className="icon" />
-              <input type="password" placeholder="Password" />
-            </div>
-          </div>
-          <div className="buttons">
-            <RegisterButton
-              text="register"
-              color="#ffffff"
-              border="none"
-              bg="#17A2B8"
-            />
-            <p className="no-acnt">Have no account yet ?</p>
-            <RegisterButton
-              text="Register"
-              color="#17A2B8"
-              border="1px solid #17A2B8"
-              bg="#ffffff"
-            />
-          </div>
-        </form>
+      <div className="form-container">
+        <h3>Login</h3>
+        <div className="inputs-login">
+          <LoginInput
+            placeholder="email"
+            type="text"
+            icon="email"
+          />
+          <br />
+          <LoginInput
+            placeholder="password"
+            type="password"
+            icon="password"
+          />
+        </div>
+        <div className="buttons-login">
+          <RegisterButton
+            text="login"
+            color="#ffffff"
+            border="none"
+            bg="#17A2B8"
+          />
+          <p className="noLogin-text">Have no account yet?</p>
+          <RegisterButton
+            text="register"
+            color="#17A2B8"
+            border="1px solid #17A2B8"
+            bg="#ffffff"
+          />
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
