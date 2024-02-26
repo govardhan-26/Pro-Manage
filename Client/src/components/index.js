@@ -1,4 +1,7 @@
 export { LoginInput } from "./ui/LoginInput/LoginInput.jsx";
+export { Analytics } from "./Analytics/Analytics.jsx";
+
+export { InputModal } from "./Modal/InputModal/inputModal.jsx";
 
 export { Taskholder } from "./ui/TaskHolder/Taskholder.jsx";
 export { Cardholder } from "./CardHolder/Cardholder.jsx";

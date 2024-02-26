@@ -55,6 +55,7 @@
 }
 .sidebar-element:hover {
   background-color: #4391ed1a;
+  cursor: pointer;
 }
 
 .sidebar-analytics {
