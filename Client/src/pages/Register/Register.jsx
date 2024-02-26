@@ -1,6 +1,18 @@
-import { LoginInput, PasswordInput, RegisterButton, Welcome } from '../../components'
-import './Register.css'
+import { useState } from "react";
+import {
+  LoginInput,
+  PasswordInput,
+  RegisterButton,
+  Welcome,
+} from "../../components";
+import "./Register.css";
 const Register = () => {
+  const [inputVal, setInputVal] = useState({
+    name: "",
+    email: "",
+    password: "",
+    cnfpwd: "",
+  });
   return (
     <div className="dash-container">
       <Welcome />
@@ -8,11 +20,17 @@ const Register = () => {
         <h4>Register</h4>
         <div className="register-login">
           <LoginInput
+            name="name"
+            value={inputVal.name}
+            setValue={setInputVal}
             placeholder="person"
             type="name"
             icon="name"
           />
           <LoginInput
+            name="email"
+            value={inputVal.email}
+            setValue={setInputVal}
             placeholder="email"
             type="text"
             icon="email"
@@ -21,11 +39,17 @@ const Register = () => {
             placeholder="password"
             type="password"
             icon="password"
+            name="password"
+            value={inputVal.password}
+            setValue={setInputVal}
           />
           <PasswordInput
             placeholder="confirm password"
             type="password"
             icon="password"
+            value={inputVal.cnfpwd}
+            setValue={setInputVal}
+            name="cnfpwd"
           />
         </div>
         <div className="buttons-login">
@@ -45,7 +69,7 @@ const Register = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

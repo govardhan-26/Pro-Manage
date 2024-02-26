@@ -1,15 +1,12 @@
-import "./Board.css"
-
+import "./Board.css";
 
 const BoardPage = () => {
   return (
     <>
-    <div className="board-upper">
-
-    </div>
-
+      <div className="board-upper"></div>
     </>
-  )
-}
+  );
+};
 
-export default BoardPage
+export default BoardPage;
+
