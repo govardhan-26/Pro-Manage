@@ -5,25 +5,6 @@
   flex-direction: row;
 }
 
-.analytics-heading > h1{
-  display: block;
-  height: 30px;
-  width: 96px;
-  font-family: "open sans", sans-serif;
-  font-weight : 600;
-  font-size: 22px;
-  line-height: 29.96px;
-  color: #000000;
-  margin-top: 26px;
-  margin-left: 44px;
-}
 
-.analytic-card-container{
-  display: flex;
-  column-gap: 17px;
-     margin-left: 44px;
-    margin-top: 49px;
-}
-  
 
 
