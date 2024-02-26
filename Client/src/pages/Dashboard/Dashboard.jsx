@@ -1,19 +1,13 @@
-
-import { Sidebar } from "../../components/index.js";
-import AnalyticsPage from "../Analytics/Analytics.jsx";
-import "./Dashboard.css";
-import SettingsPage from "../Settings/Settings.jsx";
-import BoardPage from "../Board/BoardPage.jsx";
+import { Sidebar } from '../../components/index.js'
+import './Dashboard.css'
+import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
-
   return (
     <div className="Dash-container">
-      <Sidebar />
-      {/* <AnalyticsPage/> */}
-      {/* <SettingsPage/> */}
-      <BoardPage/>
-    </div>
-  );
-};
+    <Sidebar/>
+    <Outlet/> 
+   </div> 
+  )
+}
 
-export default Dashboard;
+export default Dashboard
