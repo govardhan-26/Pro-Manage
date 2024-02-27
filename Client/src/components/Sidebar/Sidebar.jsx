@@ -76,7 +76,7 @@ const Sidebar = () => {
           </NavLink>
         </div>
       </div>
-      <div className="logOut-top">
+      <div className="">
         <div
        onClick={logoutHandler} 
         className="logout-item">

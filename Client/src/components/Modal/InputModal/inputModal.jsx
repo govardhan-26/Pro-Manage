@@ -1,6 +1,32 @@
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Button, PriorityHolder } from '../../index'
 import './inputModal.css'
-const InputModal = ({closeModal}) => {
+const InputModal = ({ closeModal }) => {
+  const xyz = useSelector((state) => state.task)
+  const [value, setValue] = useState({
+    title: '',
+    priority: '',
+    label: '',
+    date: '',
+    tasks: [],
+  })
+  const handleSetValue = (field, fieldValue) => {
+    setValue((prevValue) => {
+      if (field === 'tasks' && Array.isArray(fieldValue)) {
+        return {
+          ...prevValue,
+          tasks: [...prevValue.tasks, ...fieldValue],
+        }
+      } else {
+        return {
+          ...prevValue,
+          [field]: fieldValue,
+        }
+      }
+    })
+  }
+  console.log(value)
   return (
     <div className="relative">
       <div className="input-m-container">
@@ -20,9 +46,7 @@ const InputModal = ({closeModal}) => {
           </div>
         </div>
         <h2 className="checklist-m">Checklist (0/0)</h2>
-        <div className="scrollable-m">
-            
-        </div>
+        <div className="scrollable-m"></div>
 
         <div className="buttons-m">
           <Button
@@ -36,7 +60,7 @@ const InputModal = ({closeModal}) => {
           </Button>
           <div className="down-m-button">
             <Button
-            onclick={closeModal}
+              onclick={closeModal}
               width="162.5px"
               bg={'#ffffff'}
               border={'1px solid #cf3636'}

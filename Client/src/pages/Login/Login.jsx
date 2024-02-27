@@ -25,7 +25,6 @@ const Login = () => {
         email: loginInput.email,
         password: loginInput.password,
       })
-
       if (response.error) {
         return toast.error(`${response.error.data.message}`)
       }
