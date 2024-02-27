@@ -1,14 +1,25 @@
-import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import analytics from '../../assets/analytics.svg'
 import board from '../../assets/board.svg'
+import logout from '../../assets/logout.svg'
 import promanage from '../../assets/promanage-icon.svg'
 import settings from '../../assets/settings.svg'
 import './Sidebar.css'
+import { logOut } from '../../store/slices/authSlice'
+import { toast } from 'sonner'
 const Sidebar = () => {
   const blackColors = {
     color: '#000000',
   }
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
+  function logoutHandler() {
+    dispatch(logOut());
+    toast.success("Logged Out succesfull!")
+    localStorage.removeItem('userInfo')
+  }
   const sideElementStyle = {
     backgroundColor: '#4391ed1a',
     cursor: 'pointer',
@@ -55,6 +66,17 @@ const Sidebar = () => {
             </div>
           </NavLink>
         </div>
+      </div>
+      <div className="sidebar-items">
+        <Link
+          to={'/register'}
+          className="logout-item"
+        >
+          <div className="sidebar-logout logout-items">
+            <img src={logout} />
+            <p className="logout">Logout</p>
+          </div>
+        </Link>
       </div>
     </div>
   )

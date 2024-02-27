@@ -4,3 +4,19 @@
   background-color: #eef2f5;
   height: calc(100vh - 160px);
 }
+.Card-Header-up{
+  padding:24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h4{
+  font-family: "Poppins";
+  font-size: 16px;
+  line-height: 24px;
+}
+.Card-icons-up{
+  display: flex;
+  align-items: center;
+  gap: 22px ;
+}

@@ -1,17 +1,41 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import {
   LoginInput,
   PasswordInput,
   RegisterButton,
   Welcome,
 } from "../../components";
+import { useLoginMutation } from "../../store/api/api";
+import { setCredentials } from "../../store/slices/authSlice";
 import "./Login.css";
+import { toast } from "sonner";
 const Login = () => {
   const [loginInput, setLoginInput] = useState({
     email: "",
     password: "",
   });
-  console.log(loginInput);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [login, { isLoading }] = useLoginMutation();
+  const submitHandler = async () => {
+    try {
+      const response = await login({
+        email: loginInput.email,
+        password: loginInput.password,
+      });
+
+      if (response.error) {
+        return toast.error(`${response.error.data.message}`);
+      }
+      dispatch(setCredentials(response.data));
+      toast.success("Logged in successfully");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="dash-container">
       <Welcome />
@@ -37,18 +61,21 @@ const Login = () => {
         </div>
         <div className="buttons-login">
           <RegisterButton
+            onclick={submitHandler}
             text="login"
             color="#ffffff"
             border="none"
             bg="#17A2B8"
           />
           <p className="noLogin-text">Have no account yet?</p>
-          <RegisterButton
-            text="register"
-            color="#17A2B8"
-            border="1px solid #17A2B8"
-            bg="#ffffff"
-          />
+          <Link style={{ textDecoration: "none" }} to={"/register"}>
+            <RegisterButton
+              text="register"
+              color="#17A2B8"
+              border="1px solid #17A2B8"
+              bg="#ffffff"
+            />
+          </Link>
         </div>
       </div>
     </div>

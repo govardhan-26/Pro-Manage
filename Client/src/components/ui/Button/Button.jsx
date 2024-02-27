@@ -6,6 +6,7 @@ const Button = ({
   bg,
   color,
   border,
+  onclick,
 }) => {
   const buttonStyle = {
     width: width,
@@ -15,7 +16,9 @@ const Button = ({
     boxShadow: shadow,
   };
   return (
-    <button style={buttonStyle} className="button ">
+    <button 
+    onClick={onclick}
+    style={buttonStyle} className="button ">
       {children}
     </button>
   );

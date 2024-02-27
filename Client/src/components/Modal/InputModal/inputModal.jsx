@@ -1,6 +1,6 @@
 import { Button, PriorityHolder } from '../../index'
 import './inputModal.css'
-const InputModal = () => {
+const InputModal = ({closeModal}) => {
   return (
     <div className="relative">
       <div className="input-m-container">
@@ -36,6 +36,7 @@ const InputModal = () => {
           </Button>
           <div className="down-m-button">
             <Button
+            onclick={closeModal}
               width="162.5px"
               bg={'#ffffff'}
               border={'1px solid #cf3636'}
