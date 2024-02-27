@@ -1,24 +1,33 @@
 import { useDispatch } from 'react-redux'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
 import analytics from '../../assets/analytics.svg'
 import board from '../../assets/board.svg'
 import logout from '../../assets/logout.svg'
 import promanage from '../../assets/promanage-icon.svg'
 import settings from '../../assets/settings.svg'
-import './Sidebar.css'
+import { useLogOutMutation } from '../../store/api/api'
 import { logOut } from '../../store/slices/authSlice'
-import { toast } from 'sonner'
+import './Sidebar.css'
 const Sidebar = () => {
   const blackColors = {
     color: '#000000',
   }
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
-  function logoutHandler() {
-    dispatch(logOut());
-    toast.success("Logged Out succesfull!")
-    localStorage.removeItem('userInfo')
+  const [LogOut] = useLogOutMutation()
+  async function logoutHandler() {
+    try {
+      const response = await LogOut()
+      if (response.error) {
+        return toast.error('Logout failed')
+      }
+      dispatch(logOut())
+      navigate('/register')
+      toast.success('Logged Out succesfull!')
+    } catch (error) {
+      console.log(error)
+    }
   }
   const sideElementStyle = {
     backgroundColor: '#4391ed1a',
@@ -67,16 +76,15 @@ const Sidebar = () => {
           </NavLink>
         </div>
       </div>
-      <div className="sidebar-items">
-        <Link
-          to={'/register'}
-          className="logout-item"
-        >
+      <div className="logOut-top">
+        <div
+       onClick={logoutHandler} 
+        className="logout-item">
           <div className="sidebar-logout logout-items">
             <img src={logout} />
             <p className="logout">Logout</p>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   )
