@@ -6,10 +6,10 @@ import { useUpdateUserDetailsMutation } from '../../store/api/userProtectedApi'
 import './Settings.css'
 import { setCredentials } from '../../store/slices/authSlice'
 const SettingsPage = () => {
-  const {
-    userInfo: { userName },
-  } = useSelector((state) => state.auth)
-
+  // const {
+  //   userInfo: { userName },
+  // } = useSelector((state) => state.auth)
+  let userName = "";
   const [inputVal, setInputVal] = useState({
     name: userName,
     Oldpassword: '',

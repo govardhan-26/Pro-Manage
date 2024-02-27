@@ -3,9 +3,11 @@ import { Cardholder, Dropdown } from '../../components'
 import { DateToday } from '../../utils/date'
 import './Board.css'
 const BoardPage = () => {
-  const {
-    userInfo: { userName },
-  } = useSelector((state) => state.auth)
+  // const {
+  //   userInfo: { userName },
+  // } = useSelector((state) => state.auth)
+  let userName = "";
+
 
   return (
     <div className="board-container">
