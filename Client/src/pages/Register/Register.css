@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .form-container>h4{
     font-family: 'Open Sans';
     font-size: 33.08px;
     font-weight: 600;
     line-height: 45.04px;
     color: #343434;
-    margin-top: 184.2px;
+    margin-top: 98.2px;
     padding: 0 269px;
     margin-bottom: 40px;
 }
