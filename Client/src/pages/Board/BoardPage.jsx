@@ -1,11 +1,12 @@
-import { useSelector } from "react-redux";
-import { Cardholder, Dropdown } from "../../components";
-import "./Board.css";
-import { DateToday } from "../../utils/date";
+import { useSelector } from 'react-redux'
+import { Cardholder, Dropdown } from '../../components'
+import { DateToday } from '../../utils/date'
+import './Board.css'
 const BoardPage = () => {
   const {
     userInfo: { userName },
-  } = useSelector((state) => state.auth);
+  } = useSelector((state) => state.auth)
+
   return (
     <div className="board-container">
       <div className="board-upper">
@@ -29,7 +30,7 @@ const BoardPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BoardPage;
+export default BoardPage
