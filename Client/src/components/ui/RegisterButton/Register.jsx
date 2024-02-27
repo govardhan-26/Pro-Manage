@@ -1,13 +1,13 @@
 import "./Register.css";
 
-const RegisterButton = ({ text = "xyz", bg, color, border }) => {
+const RegisterButton = ({ text = "xyz", bg, color, border, onclick }) => {
   const buttonStyle = {
     backgroundColor: bg,
     color: color,
     border: border,
   };
   return (
-    <button style={buttonStyle} className="buttons">
+    <button style={buttonStyle} onClick={onclick} className="buttons">
       {text}
     </button>
   );

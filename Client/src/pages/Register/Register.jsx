@@ -6,6 +6,9 @@ import {
   Welcome,
 } from "../../components";
 import "./Register.css";
+import { toast } from "sonner";
+import { useRegisterMutation } from "../../store/api/api";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [inputVal, setInputVal] = useState({
     name: "",
@@ -13,6 +16,30 @@ const Register = () => {
     password: "",
     cnfpwd: "",
   });
+  const navigate = useNavigate();
+  const [register, { isLoading, isError, error }] = useRegisterMutation();
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      if (inputVal.password !== inputVal.cnfpwd) {
+        toast.error("Password not matched");
+      } else {
+        const result = await register({
+          name: inputVal.name,
+          email: inputVal.email,
+          password: inputVal.password,
+        });
+        if (result.error) {
+          toast.error(result.error.data.message);
+        } else {
+          navigate("/login");
+          toast.success("Successfully registered, login Now");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="dash-container">
       <Welcome />
@@ -54,14 +81,15 @@ const Register = () => {
         </div>
         <div className="buttons-login">
           <RegisterButton
-            text="login"
+            onclick={submitHandler}
+            text="register"
             color="#ffffff"
             border="none"
             bg="#17A2B8"
           />
           <p className="noLogin-text">Have no account yet?</p>
           <RegisterButton
-            text="register"
+            text="login"
             color="#17A2B8"
             border="1px solid #17A2B8"
             bg="#ffffff"
