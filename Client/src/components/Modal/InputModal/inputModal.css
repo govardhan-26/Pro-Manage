@@ -5,12 +5,18 @@
   height: 596px;
   border-radius: 20px;
   background-color: #ffffff;
-  border: 1px solid red;
   box-sizing: border-box;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-new-content{
+  height: 410px;
 }
 input {
   font-family: 'Open Sans', sans-serif;
@@ -78,8 +84,7 @@ h2:after {
   padding: 0 39px;
   margin-top: 19px;
   width: 588px;
-  /* height: 223px; */
-  margin-bottom: 85px;
+  max-height: 223px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -88,6 +93,7 @@ h2:after {
   padding: 0 39px;
   display: flex;
   gap: 66px;
+  margin-bottom: 30px;
 }
 
 .addNew {
@@ -96,15 +102,28 @@ h2:after {
   width: 558px;
   height: 43px;
   gap: 16px;
+  margin-left : 39px;
+  padding-left: 12px; 
+  margin-top: 19px;
 }
-.addNew > h3 {
+.addNew-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 19px;
+  width: 92px;
+}
+.addNew-button > h3 {
   font-size: 16px;
   font-family: 'Inter';
   font-weight: 500;
   color: #767575;
+  cursor: pointer;
 }
-.addNew > img {
+.addNew-button > img {
   color: #767575;
+  height: 12px;
+  width: 12px;
 }
 .input-holder {
   display: flex;

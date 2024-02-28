@@ -11,6 +11,7 @@
     align-items: center;
     gap:8px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 .pr-container>p{
     font-family:"Poppins";

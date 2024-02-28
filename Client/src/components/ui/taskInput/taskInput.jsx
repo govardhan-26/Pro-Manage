@@ -12,7 +12,7 @@ const TaskInput = ({ value, setValue ,deleteTask}) => {
             onChange={(e)=>setValue(e.target.value)}
           ></input>
         </div>
-        <img onClick={deleteTask} src={deleteIcon} />
+        <img onClick={deleteTask} src={deleteIcon} style={{cursor : "pointer"}}/>
       </div>
     </div>
   )
