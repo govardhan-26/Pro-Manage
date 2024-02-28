@@ -15,7 +15,13 @@
   align-items: center;
   justify-content: space-between;
 }
-.add-new-content{
+.calendar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-new-content {
   height: 410px;
 }
 input {
@@ -102,11 +108,11 @@ h2:after {
   width: 558px;
   height: 43px;
   gap: 16px;
-  margin-left : 39px;
-  padding-left: 12px; 
+  margin-left: 39px;
+  padding-left: 12px;
   margin-top: 19px;
 }
-.addNew-button{
+.addNew-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
