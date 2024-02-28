@@ -1,12 +1,12 @@
-import { Badge, Ellipse, RedDateBadge, Taskshow } from '../index'
-import './DisplayCard.css'
-import { useState } from 'react'
-import dropdown from '../../assets/drop-down.svg'
-import dropup from '../../assets/drop-up.svg'
-import dots from '../../assets/three-dots.svg'
+import { Badge, Ellipse, RedDateBadge, Taskshow } from "../index";
+import "./DisplayCard.css";
+import { useState } from "react";
+import dropdown from "../../assets/drop-down.svg";
+import dropup from "../../assets/drop-up.svg";
+import dots from "../../assets/three-dots.svg";
 const DisplayCard = () => {
-  const [drop, setDrop] = useState(true)
-  const array = [1, 2, 3]
+  const [drop, setDrop] = useState(true);
+  const array = [1, 2, 3];
   return (
     <div className="todo-card-container">
       <div className="todo-card-content">
@@ -16,10 +16,7 @@ const DisplayCard = () => {
             <div className="todo-card-priority-text">HIGH PRIORITY</div>
           </div>
           <div className="todo-cards-dots">
-            <img
-              src={dots}
-              alt="dots"
-            />
+            <img src={dots} alt="dots" />
           </div>
         </div>
         <div className="todo-card-heading">
@@ -28,27 +25,18 @@ const DisplayCard = () => {
         <div className="todo-card-checklist">
           <div className="todo-checklist-heading">
             <h2>Checklist (0/3)</h2>
-            <div
-              className="down-icon"
-              onClick={() => setDrop(!drop)}
-            >
+            <div className="down-icon" onClick={() => setDrop(!drop)}>
               {drop ? (
-                <img
-                  src={dropup}
-                  alt="dropup"
-                />
+                <img src={dropup} alt="dropup" />
               ) : (
-                <img
-                  src={dropdown}
-                  alt="dropdown"
-                />
+                <img src={dropdown} alt="dropdown" />
               )}
             </div>
           </div>
           {drop ? (
             <div className="todo-checklist-content">
               {array.map((item, index) => {
-                return <Taskshow />
+                return <Taskshow />;
               })}
             </div>
           ) : (
@@ -67,7 +55,7 @@ const DisplayCard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { DisplayCard }
+export { DisplayCard };
