@@ -10,7 +10,7 @@ const taskSlice = createSlice({
     addTask: (state, action) => {
       const { title, priority, label, date, task } = action.payload
       const newTask = {
-        id: '', // You may want to generate a unique ID here
+        id: '', 
         title: title !== undefined ? title : '',
         priority: priority !== undefined ? priority : '',
         label: label !== undefined ? label : '',

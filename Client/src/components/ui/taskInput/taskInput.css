@@ -18,11 +18,13 @@
   align-items: center;
   justify-content: space-between;
   width: 564px;
-  padding: 12px;
+  padding:0px 12px;
+  height:100%;
 }
+
 .input-left > input {
   border: none;
-  padding-top: 1px;
+
 }
 .input-left > input:focus {
   outline: none;
