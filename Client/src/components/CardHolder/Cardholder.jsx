@@ -5,10 +5,9 @@ import "./Cardholder.css";
 import { InputModal } from "../Modal/InputModal/inputModal";
 import { DisplayCard } from "../DisplayCard/DisplayCard";
 
-const Cardholder = ({ heading, plusSymbol }) => {
+const Cardholder = ({ heading, plusSymbol, todos }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const displaycards = [1, 2, 3];
-
   return (
     <div className="card-container">
       <div className="Card-Header-up">
