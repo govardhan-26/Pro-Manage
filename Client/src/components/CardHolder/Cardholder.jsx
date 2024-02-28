@@ -7,7 +7,13 @@ import { DisplayCard } from "../DisplayCard/DisplayCard";
 
 const Cardholder = ({ heading, plusSymbol, todos }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const displaycards = [1, 2, 3];
+  let displaycards;
+  if (todos) {
+    displaycards = [...todos];
+    console.log(todos);
+  } else {
+    displaycards = [];
+  }
   return (
     <div className="card-container">
       <div className="Card-Header-up">
@@ -24,7 +30,7 @@ const Cardholder = ({ heading, plusSymbol, todos }) => {
       </div>
       <div className="board-card-container">
         {displaycards.map((item, index) => (
-          <DisplayCard />
+          <DisplayCard {...item} />
         ))}
       </div>
     </div>

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 .todo-card-container {
   width: 313px;
@@ -25,15 +25,14 @@
 
 .todo-card-prior {
   height: 12px;
-  width: 71px;
+  gap: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 }
 
 .todo-card-priority-text {
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   font-weight: 500;
   font-size: 8px;
   line-height: 12px;
@@ -61,7 +60,7 @@
 }
 
 .todo-card-heading-text {
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -81,7 +80,7 @@
   & > h2 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     line-height: 16.94px;
   }
 }
