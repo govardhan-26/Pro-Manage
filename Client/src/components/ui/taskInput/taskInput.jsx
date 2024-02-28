@@ -1,6 +1,6 @@
-import deleteIcon from '../../../assets/delete.svg'
-import './taskInput.css'
-const TaskInput = ({ value, setValue ,deleteTask}) => {
+import deleteIcon from "../../../assets/delete.svg";
+import "./taskInput.css";
+const TaskInput = ({ value, setValue, deleteTask }) => {
   return (
     <div className="inpt-container">
       <div className="inpt-contents">
@@ -9,13 +9,17 @@ const TaskInput = ({ value, setValue ,deleteTask}) => {
           <input
             placeholder="Add a task"
             value={value}
-            onChange={(e)=>setValue(e.target.value)}
+            onChange={(e) => setValue(e.target.value)}
           ></input>
         </div>
-        <img onClick={deleteTask} src={deleteIcon} style={{cursor : "pointer"}}/>
+        <img
+          onClick={deleteTask}
+          src={deleteIcon}
+          style={{ cursor: "pointer" }}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { TaskInput }
+export { TaskInput };
