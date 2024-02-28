@@ -1,18 +1,30 @@
-import "./ModalComponent.css";
+import './ModalComponent.css'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { useLogOutMutation } from '../../../store/api/api'
+import { Button } from '../../ui/Button/Button'
+import './ModalComponent.css'
+import { logOut } from '../../../store/slices/authSlice'
+import { toast } from 'sonner'
 
-import React, { useState } from "react";
-import "./ModalComponent.css";
-import { Button } from "../../ui/Button/Button";
-const ModalComponent = ({ children }) => {
-  const [modalVisible, setModalVisible] = useState(false);
-  const toggleModal = () => {
-    setModalVisible(!modalVisible);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
-  };
-
+const ModalComponent = ({ children, closeModal }) => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const [LogOut] = useLogOutMutation()
+  async function logoutHandler() {
+    try {
+      const response = await LogOut()
+      if (response.error) {
+        return toast.error('Logout failed')
+      }
+      dispatch(logOut())
+      navigate('/register')
+      toast.success('Logged Out succesfull!')
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className="outer">
       <div className="modal-container">
@@ -21,22 +33,24 @@ const ModalComponent = ({ children }) => {
           <Button
             className="one"
             text={`Yes, ${children}`}
+            onclick={logoutHandler}
             width="300px"
             bg="#17a2bb"
             border="none"
             color="#ffffff"
           />
           <Button
+            onclick={closeModal}
             text="Cancel"
             width="300px"
-            bg={"#ffffff"}
-            border={"1px solid #cf3636"}
+            bg={'#ffffff'}
+            border={'1px solid #cf3636'}
             color="#cf3636"
           />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { ModalComponent };
+export { ModalComponent }
