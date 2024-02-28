@@ -7,13 +7,24 @@
   font-family: 'Inter';
   color: #000000;
   line-height: 16.94px;
+  
 }
 .input-inside {
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 10px;
   gap: 12px;
   height: auto;
-  width: auto;
+  width: 264px;
+  border-radius: 5px;
+  border: 1px solid #E2E2E2;
+  box-sizing: border-box;
+
+}
+
+.inpt-radio{
+  height: 18px;
+  width: 18px;
+  border: 1px solid red;
 }
 

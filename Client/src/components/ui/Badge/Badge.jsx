@@ -25,6 +25,7 @@ const DateBadge = ({ children }) => {
 
 const RedDateBadge = ({ children }) => {
   const styles = {
+    height : "22px",
     width: "53px",
     color: "#ffffff",
     backgroundColor: "#CF3636",
@@ -37,6 +38,7 @@ const RedDateBadge = ({ children }) => {
 };
 const GreenDateBadge = ({ children }) => {
   const styles = {
+    height : "22px",
     width: "53px",
     color: "#ffffff",
     backgroundColor: "#63C05B",
