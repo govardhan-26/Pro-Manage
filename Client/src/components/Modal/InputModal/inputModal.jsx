@@ -91,13 +91,13 @@ const InputModal = ({ closeModal }) => {
           </Button>
           <div className="down-m-button">
             <Button
+            text="Cancel"
               onclick={closeModal}
               width="162.5px"
               bg={"#ffffff"}
               border={"1px solid #cf3636"}
               color="#cf3636"
             >
-              Cancel
             </Button>
             <Button width="162.5px" bg="#17a2bb" border="none" color="#ffffff">
               Save
