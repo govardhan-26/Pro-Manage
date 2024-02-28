@@ -1,8 +1,8 @@
-import "./Button.css";
+import './Button.css'
 const Button = ({
-  children="",
-  shadow = "",
-  width = "300px",
+  text,
+  shadow = '',
+  width = '300px',
   bg,
   color,
   border,
@@ -14,14 +14,16 @@ const Button = ({
     color: color,
     border: border,
     boxShadow: shadow,
-  };
+  }
   return (
-    <button 
-    onClick={onclick}
-    style={buttonStyle} className="button ">
-      {children}
+    <button
+      onClick={onclick}
+      style={buttonStyle}
+      className="button "
+    >
+      {text}
     </button>
-  );
-};
+  )
+}
 
-export { Button };
+export { Button }

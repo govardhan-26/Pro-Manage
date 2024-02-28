@@ -1,5 +1,4 @@
-
-
+export { DisplayCard } from './DisplayCard/DisplayCard.jsx'
 export { Dropdown } from './ui/Dropdown/Dropdown.jsx'
 
 export { Analytics } from './Analytics/Analytics.jsx'
