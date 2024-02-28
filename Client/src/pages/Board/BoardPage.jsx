@@ -1,14 +1,15 @@
-import { useSelector } from 'react-redux'
-import { Cardholder, Dropdown } from '../../components'
-import { DateToday } from '../../utils/date'
-import './Board.css'
+import { Cardholder, Dropdown } from "../../components";
+import { useGetAllTodosQuery } from "../../store/api/todoapi";
+import { DateToday } from "../../utils/date";
+import "./Board.css";
 const BoardPage = () => {
   // const {
   //   userInfo: { userName },
   // } = useSelector((state) => state.auth)
   let userName = "";
 
-
+  const { data, isLoading, isSuccess } = useGetAllTodosQuery();
+  console.log(data?.todos);
   return (
     <div className="board-container">
       <div className="board-upper">
@@ -25,14 +26,14 @@ const BoardPage = () => {
       </div>
       <div className="board-wrapper">
         <div className="board-cards">
-          <Cardholder heading="Backlog" plusSymbol={false}/>
-          <Cardholder heading="To-do" plusSymbol={true}/>
-          <Cardholder heading="In-Progress" plusSymbol={false}/>
-          <Cardholder heading="Done" plusSymbol={false}/>
+          <Cardholder heading="Backlog" plusSymbol={false} />
+          <Cardholder todos={data?.todos} heading="To-do" plusSymbol={true} />
+          <Cardholder heading="In-Progress" plusSymbol={false} />
+          <Cardholder heading="Done" plusSymbol={false} />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BoardPage
+export default BoardPage;

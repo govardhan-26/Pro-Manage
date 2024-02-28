@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import { toast } from 'sonner'
 import plus from '../../../assets/plus.svg'
+import { useAddTaskMutation } from '../../../store/api/todoapi'
+import { formatDate } from '../../../utils/InputTaskUtilities'
 import { Button, PriorityHolder, TaskInput } from '../../index'
 import './inputModal.css'
 const InputModal = ({ closeModal }) => {
@@ -10,25 +13,31 @@ const InputModal = ({ closeModal }) => {
   const [cal, setCal] = useState(false)
   const [priority, setPriority] = useState('')
   const [tasks, setTasks] = useState([])
-  const SetValues = (e) => {
-    setInValue((prevInpt) => ({
-      ...prevInpt,
-      [name]: e.target.value,
-    }))
+  const [addTask, { isLoading }] = useAddTaskMutation()
+
+  const submitHandler = async () => {
+    try {
+      const response = await addTask({
+        title: title,
+        priority: priority,
+        label: 'done',
+        date: date,
+        tasks: [...tasks],
+      })
+      if (response.error) {
+        return toast.error(`${response.error.data.message}`)
+      }
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
   }
   const handleDateChange = (newDate) => {
     setDate(newDate)
     setCal(false)
   }
-  const formatDate = (date) => {
-    const day = date.getDate().toString().padStart(2, '0')
-    const month = (date.getMonth() + 1).toString().padStart(2, '0')
-    const year = date.getFullYear()
-    return `${month}/${day}/${year}`
-  }
-
   const addNewTask = () => {
-    setTasks([...tasks, { text: '', completed: false }])
+    setTasks([...tasks, { title: '', completed: false }])
   }
   const deleteTask = (index) => {
     const updatedTasks = [...tasks]
@@ -37,7 +46,8 @@ const InputModal = ({ closeModal }) => {
   }
   const handleTaskChange = (index, newText) => {
     const updatedTasks = [...tasks]
-    updatedTasks[index].text = newText
+    updatedTasks[index].title = newText
+    // updatedTasks[index].com
     setTasks(updatedTasks)
   }
   return (
@@ -132,6 +142,10 @@ const InputModal = ({ closeModal }) => {
               color="#cf3636"
             ></Button>
             <Button
+              onclick={() => {
+                submitHandler()
+                closeModal()
+              }}
               text="Save"
               width="162.5px"
               bg="#17a2bb"

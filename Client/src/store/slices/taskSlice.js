@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   tasks: [],
 }
-
 const taskSlice = createSlice({
   name: 'task',
   initialState: initialState,
@@ -17,7 +16,6 @@ const taskSlice = createSlice({
         date: date !== undefined ? date : '',
         tasks: task !== undefined ? [...task] : [],
       }
-
       state.tasks.push(newTask)
     },
   },

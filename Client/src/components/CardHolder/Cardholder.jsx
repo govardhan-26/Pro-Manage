@@ -3,9 +3,14 @@ import fold from "../../assets/fold.svg";
 import plus from "../../assets/plus.svg";
 import "./Cardholder.css";
 import { InputModal } from "../Modal/InputModal/inputModal";
+<<<<<<< Updated upstream
 import { DisplayCard } from "../DisplayCard/DisplayCard";
 
 const Cardholder = ({ heading, plusSymbol }) => {
+=======
+
+const Cardholder = ({ heading, plusSymbol, todos }) => {
+>>>>>>> Stashed changes
   const [isModalVisible, setIsModalVisible] = useState(false);
   const displaycards = [1, 2, 3];
 
@@ -23,11 +28,15 @@ const Cardholder = ({ heading, plusSymbol }) => {
           <InputModal closeModal={() => setIsModalVisible(false)} />
         )}
       </div>
+<<<<<<< Updated upstream
       <div className="board-card-container">
         {displaycards.map((item, index) => (
           <DisplayCard />
         ))}
       </div>
+=======
+      <div className="board-card-container"></div>
+>>>>>>> Stashed changes
     </div>
   );
 };
