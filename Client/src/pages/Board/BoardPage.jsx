@@ -25,10 +25,10 @@ const BoardPage = () => {
       </div>
       <div className="board-wrapper">
         <div className="board-cards">
-          <Cardholder />
-          <Cardholder />
-          <Cardholder />
-          <Cardholder />
+          <Cardholder heading="Backlog" plusSymbol={false}/>
+          <Cardholder heading="To-do" plusSymbol={true}/>
+          <Cardholder heading="In-Progress" plusSymbol={false}/>
+          <Cardholder heading="Done" plusSymbol={false}/>
         </div>
       </div>
     </div>
