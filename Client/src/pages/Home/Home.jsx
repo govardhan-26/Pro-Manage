@@ -1,4 +1,4 @@
-import { Badge, DateBadge, Ellipse, LoginInput, TaskInput, Taskholder,Taskshow } from '../../components'
+import { Badge, DateBadge, Ellipse, LoginInput, RedDateBadge, TaskInput, Taskholder,Taskshow } from '../../components'
 import './Home.css'
 import dots from '../../assets/three-dots.svg'
 import dropup from '../../assets/drop-up.svg'
@@ -58,7 +58,7 @@ const Home = () => {
         </div>
         <div className="todo-card-progress">
           <div className='todo-card-progress-1'>
-            <DateBadge>Feb 10th</DateBadge>
+            <RedDateBadge>Feb 10th</RedDateBadge>
           </div>
           <div className='todo-card-progress-2'>
             <Badge width="42px">PROGRESS</Badge>
