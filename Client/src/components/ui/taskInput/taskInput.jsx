@@ -1,14 +1,18 @@
-import './taskInput.css'
 import deleteIcon from '../../../assets/delete.svg'
-const TaskInput = () => {
+import './taskInput.css'
+const TaskInput = ({ value, setValue ,deleteTask}) => {
   return (
     <div className="inpt-container">
       <div className="inpt-contents">
         <div className="input-left">
-          <div className='inpt-radio'></div>
-          <input placeholder="Add a task"></input>
+          <div className="inpt-radio"></div>
+          <input
+            placeholder="Add a task"
+            value={value}
+            onChange={(e)=>setValue(e.target.value)}
+          ></input>
         </div>
-        <img src={deleteIcon} />
+        <img onClick={deleteTask} src={deleteIcon} />
       </div>
     </div>
   )
