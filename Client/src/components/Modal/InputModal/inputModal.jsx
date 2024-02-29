@@ -27,7 +27,6 @@ const InputModal = ({ closeModal }) => {
       if (response.error) {
         return toast.error(`${response.error.data.message}`);
       }
-      console.log(response);
     } catch (error) {
       console.log(error);
     }

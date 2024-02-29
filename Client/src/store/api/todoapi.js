@@ -15,26 +15,13 @@ export const TaskApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    adminCourses: builder.query({
-      query: (body) => `todos`,
-      providesTags: ["Courses"],
-    }),
     particularTodo: builder.query({
       query: (body) => `todos/particular/${body}`,
       providesTags: ["particularTodo"],
     }),
     getAllTodos: builder.query({
       query: () => "/todos",
-      refetchOnMountOrArgChange: true,
-      providesTags: ["AllTodos", "login"],
-    }),
-    updateAdminDetails: builder.mutation({
-      query: (data) => ({
-        url: `admin/profileUpdate`,
-        method: "PUT",
-        body: data,
-      }),
-      invalidatesTags: ["Courses", "Allcourses", "name"],
+      providesTags: ["todosall"],
     }),
     addTask: builder.mutation({
       query: (data) => ({
@@ -42,7 +29,7 @@ export const TaskApi = createApi({
         method: "POST",
         body: data,
       }),
-      invalidatesTags: ["AllTodos"],
+      invalidatesTags: ["todosall"],
     }),
     addLabel: builder.mutation({
       query: (data) => ({
@@ -50,32 +37,22 @@ export const TaskApi = createApi({
         method: "PUT",
         body: data,
       }),
-      invalidatesTags: ["AllTodos"],
+      invalidatesTags: ["todosall"],
     }),
-    editCourse: builder.mutation({
+    editTodo: builder.mutation({
       query: (data) => ({
-        url: `course/updateCourse/${data.courseId}`,
+        url: `todos/update/${data.taskId}`,
         method: "PUT",
-        body: data.formData,
+        body: data,
       }),
-      invalidatesTags: ["Courses", "Allcourses", "particularTodo"],
+      invalidatesTags: ["todosall", "particularTodo"],
     }),
     deleteCourse: builder.mutation({
       query: (data) => ({
         url: `course/deleteCourse/${data}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["Courses", "Allcourses"],
-    }),
-    deleteAdmin: builder.mutation({
-      query: (data) => ({
-        url: `admin/deleteprofile/${data}`,
-        method: "DELETE",
-      }),
-    }),
-    getAdminName: builder.query({
-      query: (body) => `admin/adminName/${body}`,
-      providesTags: ["name"],
+      invalidatesTags: ["todosall"],
     }),
   }),
 });
@@ -85,6 +62,5 @@ export const {
   useGetAllTodosQuery,
   useAddLabelMutation,
   useParticularTodoQuery,
+  useEditTodoMutation,
 } = TaskApi;
-
-export const { getAllTodos } = TaskApi.endpoints;

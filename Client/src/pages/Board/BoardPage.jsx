@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Cardholder, Dropdown } from "../../components";
-import { getAllTodos, useGetAllTodosQuery } from "../../store/api/todoapi";
+import { useGetAllTodosQuery } from "../../store/api/todoapi";
 import { DateToday } from "../../utils/date";
 import "./Board.css";
 const BoardPage = () => {
   const {
     userInfo: { userName },
   } = useSelector((state) => state.auth);
-  const { data, refetch, isLoading, isSuccess } = useGetAllTodosQuery();
+  const { data, refetch, isLoading, isSuccess } = useGetAllTodosQuery({
+    refetchOnMountOrArgChange: true,
+    refetchOnReconnect: true,
+    refetchOnFocus: true,
+    refetchOnLogin: true,
+  });
   useEffect(() => {
     refetch();
   }, []);

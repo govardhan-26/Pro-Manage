@@ -1,10 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query'
-import authSlice from './slices/authSlice'
-import { userApiSlice } from './api/api'
-import { userSlice } from './api/userProtectedApi'
-import taskSlice from './slices/taskSlice'
-import { TaskApi } from './api/todoapi'
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import authSlice from "./slices/authSlice";
+import { userApiSlice } from "./api/api";
+import { userSlice } from "./api/userProtectedApi";
+import taskSlice from "./slices/taskSlice";
+import { TaskApi } from "./api/todoapi";
 export const store = configureStore({
   reducer: {
     auth: authSlice,
@@ -19,6 +19,5 @@ export const store = configureStore({
       userSlice.middleware,
       TaskApi.middleware,
     ),
-})
-
-setupListeners(store.dispatch)
+});
+setupListeners(store.dispatch);

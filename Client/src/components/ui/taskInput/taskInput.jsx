@@ -18,6 +18,7 @@ const TaskInput = ({ value, completed, setComplete, setValue, deleteTask }) => {
             {completed && <img src={tick} />}{" "}
           </div>
           <input
+            type="text"
             placeholder="Add a task"
             value={value}
             onChange={(e) => setValue(e.target.value)}

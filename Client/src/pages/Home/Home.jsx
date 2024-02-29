@@ -14,8 +14,12 @@ const Home = () => {
 
       }}
     >
+<<<<<<< Updated upstream
       <EditShareModal />
       {/* <Calendar /> */}
+=======
+      <EditModal />
+>>>>>>> Stashed changes
     </div>
   );
 };
