@@ -10,7 +10,6 @@ const Cardholder = ({ heading, plusSymbol, todos }) => {
   let displaycards;
   if (todos) {
     displaycards = [...todos];
-    console.log(todos);
   } else {
     displaycards = [];
   }
@@ -30,7 +29,7 @@ const Cardholder = ({ heading, plusSymbol, todos }) => {
       </div>
       <div className="board-card-container">
         {displaycards.map((item, index) => (
-          <DisplayCard {...item} />
+          <DisplayCard {...item} heading={heading} />
         ))}
       </div>
     </div>

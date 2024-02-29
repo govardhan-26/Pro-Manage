@@ -5,14 +5,18 @@ import dropdown from "../../assets/drop-down.svg";
 import dropup from "../../assets/drop-up.svg";
 import dots from "../../assets/three-dots.svg";
 import { getFormattedDate } from "../../utils/formatDate";
+import { useAddLabelMutation } from "../../store/api/todoapi";
+import { toast } from "sonner";
 const DisplayCard = ({
   priority = "HIGH",
   title = "",
   date = new Date(),
   tasks = [],
+  heading,
+  _id,
 }) => {
+  const [labelAdd] = useAddLabelMutation();
   const [drop, setDrop] = useState(true);
-  const array = [1, 2, 3];
   let bg =
     priority === "HIGH"
       ? "#FF2473"
@@ -20,6 +24,29 @@ const DisplayCard = ({
         ? "#18B0FF"
         : "#63C05B";
   let dueDate = getFormattedDate(date);
+  const labels = [
+    {
+      label: "DONE",
+      width: "34px",
+    },
+    { label: "TO-DO", width: "38px" },
+    { label: "PROGRESS", width: "54px" },
+    { label: "BACKLOG", width: "54px" },
+  ];
+  const handleLabelAdd = async (value) => {
+    try {
+      const response = await labelAdd({
+        label: value,
+        taskId: _id,
+      });
+      if (response.error) {
+        toast.error("Label  updation failed");
+      }
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="todo-card-container">
       <div className="todo-card-content">
@@ -61,9 +88,20 @@ const DisplayCard = ({
             <RedDateBadge>{dueDate}</RedDateBadge>
           </div>
           <div className="todo-card-progress-2">
-            <Badge width="42px">PROGRESS</Badge>
-            <Badge width="42px">TODO</Badge>
-            <Badge width="42px">DONE</Badge>
+            {labels.map((x) => {
+              if (x.label != heading.toUpperCase()) {
+                return (
+                  <Badge
+                    onclick={() => {
+                      handleLabelAdd(x.label);
+                    }}
+                    width={x.width}
+                  >
+                    {x.label}
+                  </Badge>
+                );
+              }
+            })}
           </div>
         </div>
       </div>
