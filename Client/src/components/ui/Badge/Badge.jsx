@@ -1,10 +1,10 @@
 import "./Badge.css";
-const Badge = ({ children, width }) => {
+const Badge = ({ children, width, onclick }) => {
   const styles = {
     width: width,
   };
   return (
-    <div style={styles} className="badge-container">
+    <div onClick={onclick} style={styles} className="badge-container">
       {children}
     </div>
   );
@@ -25,7 +25,7 @@ const DateBadge = ({ children }) => {
 
 const RedDateBadge = ({ children }) => {
   const styles = {
-    height : "22px",
+    height: "22px",
     width: "53px",
     color: "#ffffff",
     backgroundColor: "#CF3636",
@@ -38,7 +38,7 @@ const RedDateBadge = ({ children }) => {
 };
 const GreenDateBadge = ({ children }) => {
   const styles = {
-    height : "22px",
+    height: "22px",
     width: "53px",
     color: "#ffffff",
     backgroundColor: "#63C05B",

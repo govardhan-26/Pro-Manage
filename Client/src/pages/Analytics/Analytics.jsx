@@ -1,18 +1,18 @@
-import { Analytics } from '../../components'
-import "./Analytics.css"
+import { Analytics } from "../../components";
+import "./Analytics.css";
 const AnalyticsPage = () => {
   const items = [
-    'Backlog Tasks',
-    'Todo Tasks',
-    'In-Progress Tasks',
-    'Completed Tasks',
-  ]
+    "Backlog Tasks",
+    "Todo Tasks",
+    "In-Progress Tasks",
+    "Completed Tasks",
+  ];
   const items2 = [
-    'Low Priority',
-    'Moderate Priority',
-    'High Priority',
-    'Due Date Tasks',
-  ]
+    "Low Priority",
+    "Moderate Priority",
+    "High Priority",
+    "Due Date Tasks",
+  ];
 
   return (
     <div className="analytics-container">
@@ -24,7 +24,7 @@ const AnalyticsPage = () => {
         <Analytics items={items2} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AnalyticsPage
+export default AnalyticsPage;

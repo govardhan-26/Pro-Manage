@@ -1,11 +1,22 @@
 import deleteIcon from "../../../assets/delete.svg";
 import "./taskInput.css";
-const TaskInput = ({ value, setValue, deleteTask }) => {
+import tick from "../../../assets/tick.svg";
+const TaskInput = ({ value, completed, setComplete, setValue, deleteTask }) => {
+  const styles = {
+    backgroundColor: "#17A2B8",
+    cursor: "pointer",
+  };
   return (
     <div className="inpt-container">
       <div className="inpt-contents">
         <div className="input-left">
-          <div className="inpt-radio"></div>
+          <div
+            onClick={() => setComplete()}
+            style={completed ? styles : {}}
+            className="inpt-radio "
+          >
+            {completed && <img src={tick} />}{" "}
+          </div>
           <input
             placeholder="Add a task"
             value={value}
@@ -21,5 +32,4 @@ const TaskInput = ({ value, setValue, deleteTask }) => {
     </div>
   );
 };
-
 export { TaskInput };
