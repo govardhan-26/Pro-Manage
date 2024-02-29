@@ -1,0 +1,23 @@
+.editmodal-container{
+    height: 120px;
+    width: 151px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    padding: 23px 19px;
+}
+
+body{
+    background-color: #EEF2F5;
+}
+
+.editmodal-content{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    height: 74px;
+    width: 100%;
+    font-family: "poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+}
