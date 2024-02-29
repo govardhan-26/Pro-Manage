@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 .inpt-container {
   border: 1px solid #e2e2e2;
@@ -12,19 +12,21 @@
   height: 18px;
   width: 18px;
   border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .inpt-contents {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 564px;
-  padding:0px 12px;
-  height:100%;
+  padding: 0px 12px;
+  height: 100%;
 }
 
 .input-left > input {
   border: none;
-
 }
 .input-left > input:focus {
   outline: none;
@@ -36,9 +38,10 @@
   justify-content: space-between;
 }
 
-.input-left > input::placeholder , .input-left>h3{
+.input-left > input::placeholder,
+.input-left > h3 {
   font-weight: 400;
   font-size: 16px;
-  font-family: 'Inter';
+  font-family: "Inter";
   color: #828282;
 }
