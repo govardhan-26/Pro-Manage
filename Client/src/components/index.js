@@ -1,4 +1,7 @@
+export { EditShareModal } from "./Modal/EditShareModal/EditShareModal.jsx";
+
 export { EditModal } from "./Modal/EditModal/EditModal.jsx";
+
 
 export { DisplayCard } from "./DisplayCard/DisplayCard.jsx";
 export { Dropdown } from "./ui/Dropdown/Dropdown.jsx";

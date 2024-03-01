@@ -16,6 +16,7 @@ const Register = () => {
     password: '',
     cnfpwd: '',
   })
+
   const navigate = useNavigate()
   const [register, { isLoading, isError, error }] = useRegisterMutation()
   const submitHandler = async (e) => {

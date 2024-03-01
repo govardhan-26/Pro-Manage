@@ -31,6 +31,7 @@ const Login = () => {
       dispatch(setCredentials(response.data))
       toast.success('Logged in successfully')
       navigate('/')
+      window.location.href = '/'
     } catch (error) {
       console.log(error)
     }

@@ -1,19 +1,24 @@
-import { Analytics } from "../../components";
-import "./Analytics.css";
+import { useSelector } from 'react-redux'
+import { Analytics } from '../../components'
+import './Analytics.css'
 const AnalyticsPage = () => {
+  const data = useSelector(state=>state.task);
+  console.log(data);
   const items = [
-    "Backlog Tasks",
-    "Todo Tasks",
-    "In-Progress Tasks",
-    "Completed Tasks",
+    { name: 'Backlog Tasks', count: data.backlogs },
+    { name: 'Todo Tasks', count: data.todotasks },
+    { name: 'In-Progress Tasks', count: data.progresstasks },
+    { name: 'Completed Tasks', count: data.completedTasks },
   ];
+  
   const items2 = [
-    "Low Priority",
-    "Moderate Priority",
-    "High Priority",
-    "Due Date Tasks",
+    { name: 'Low Priority', count: data.lowPriority },
+    { name: 'Moderate Priority', count: data.moderatePriority },
+    { name: 'High Priority', count: data.highPriority },
+    { name: 'Due Date Tasks', count: data.dueDateTasks },
   ];
-
+  
+  
   return (
     <div className="analytics-container">
       <div className="analytics-heading">
@@ -24,7 +29,7 @@ const AnalyticsPage = () => {
         <Analytics items={items2} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AnalyticsPage;
+export default AnalyticsPage
