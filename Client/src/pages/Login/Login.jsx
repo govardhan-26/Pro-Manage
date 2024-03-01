@@ -12,6 +12,19 @@ import { useLoginMutation } from '../../store/api/api'
 import { setCredentials } from '../../store/slices/authSlice'
 import './Login.css'
 const Login = () => {
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovered(false);
+  };
+
+
+
   const [loginInput, setLoginInput] = useState({
     email: '',
     password: '',
@@ -66,6 +79,7 @@ const Login = () => {
             color="#ffffff"
             border="none"
             bg="#17A2B8"
+            hovercolor="#ffffff"
           />
           <p className="noLogin-text">Have no account yet?</p>
           <Link
@@ -77,6 +91,7 @@ const Login = () => {
               color="#17A2B8"
               border="1px solid #17A2B8"
               bg="#ffffff"
+              hovercolor="#ffffff"
             />
           </Link>
         </div>
