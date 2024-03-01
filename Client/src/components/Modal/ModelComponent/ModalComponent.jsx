@@ -8,7 +8,7 @@ import './ModalComponent.css'
 import { logOut } from '../../../store/slices/authSlice'
 import { toast } from 'sonner'
 
-const ModalComponent = ({ children, closeModal }) => {
+const ModalComponent = ({ children, closeModal,deleteTask }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [LogOut] = useLogOutMutation()
@@ -25,6 +25,10 @@ const ModalComponent = ({ children, closeModal }) => {
       console.log(error)
     }
   }
+  const Del= ()=>{
+    deleteTask();
+    closeModal()
+  }
   return (
     <div className="outer">
       <div className="modal-container">
@@ -33,7 +37,7 @@ const ModalComponent = ({ children, closeModal }) => {
           <Button
             className="one"
             text={`Yes, ${children}`}
-            onclick={logoutHandler}
+            onclick={children==="Logout"?logoutHandler:Del}
             width="300px"
             bg="#17a2bb"
             border="none"

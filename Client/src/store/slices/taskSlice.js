@@ -1,25 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit'
-const initialState = {
-  tasks: [],
-}
-const taskSlice = createSlice({
+
+const tasksSlice = createSlice({
   name: 'task',
-  initialState: initialState,
+  initialState: {
+    backlogs: 0,
+    todotasks: 0,
+    progresstasks: 0,
+    completedTasks: 0,
+    lowPriority: 0,
+    highPriority: 0,
+    moderatePriority: 0,
+    dueDateTasks: 0,
+  },
   reducers: {
-    addTask: (state, action) => {
-      const { title, priority, label, date, task } = action.payload
-      const newTask = {
-        id: '', 
-        title: title !== undefined ? title : '',
-        priority: priority !== undefined ? priority : '',
-        label: label !== undefined ? label : '',
-        date: date !== undefined ? date : '',
-        tasks: task !== undefined ? [...task] : [],
-      }
-      state.tasks.push(newTask)
+    updateTaskCount: (state, action) => {
+      const { backlogs, todotasks, progresstasks, completedTasks } =
+        action.payload
+      state.backlogs = backlogs
+      state.todotasks = todotasks
+      state.progresstasks = progresstasks
+      state.completedTasks = completedTasks
+    },
+    updatePriorityCount: (state, action) => {
+      const { lowPriority, highPriority, moderatePriority, dueDateTasks } =
+        action.payload
+      state.lowPriority = lowPriority
+      state.highPriority = highPriority
+      state.moderatePriority = moderatePriority
+      state.dueDateTasks = dueDateTasks
     },
   },
 })
 
-export const { addTask } = taskSlice.actions
-export default taskSlice.reducer
+export const { updateTaskCount, updatePriorityCount } = tasksSlice.actions
+export default tasksSlice.reducer
