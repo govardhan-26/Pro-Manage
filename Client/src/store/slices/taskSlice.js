@@ -1,36 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+const initialState = {
+  BACKLOG: 0,
+  DONE: 0,
+  TODO: 0,
+  PROGRESS: 0,
+  LowPr: 0,
+  HighPr: 0,
+  ModeratePr: 0,
+  dueDateTasks: 0,
+}
 const tasksSlice = createSlice({
   name: 'task',
-  initialState: {
-    backlogs: 0,
-    todotasks: 0,
-    progresstasks: 0,
-    completedTasks: 0,
-    lowPriority: 0,
-    highPriority: 0,
-    moderatePriority: 0,
-    dueDateTasks: 0,
-  },
+  initialState: initialState,
   reducers: {
-    updateTaskCount: (state, action) => {
-      const { backlogs, todotasks, progresstasks, completedTasks } =
-        action.payload
-      state.backlogs = backlogs
-      state.todotasks = todotasks
-      state.progresstasks = progresstasks
-      state.completedTasks = completedTasks
-    },
-    updatePriorityCount: (state, action) => {
-      const { lowPriority, highPriority, moderatePriority, dueDateTasks } =
-        action.payload
-      state.lowPriority = lowPriority
-      state.highPriority = highPriority
-      state.moderatePriority = moderatePriority
-      state.dueDateTasks = dueDateTasks
+    setAnalytics: (state, action) => {
+      state.BACKLOG = action.payload.BACKLOG
+      state.DONE = action.payload.DONE
+      state.TODO = action.payload.TODO
+      state.PROGRESS = action.payload.PROGRESS
+      state.LowPr = action.payload.LowPr
+      state.HighPr = action.payload.HighPr
+      state.ModeratePr = action.payload.ModeratePr
+      state.dueDateTasks = action.payload.dueDateTasks
+      localStorage.setItem('lengths', JSON.stringify(action.payload))
     },
   },
 })
 
-export const { updateTaskCount, updatePriorityCount } = tasksSlice.actions
+export const { setAnalytics } = tasksSlice.actions
 export default tasksSlice.reducer
