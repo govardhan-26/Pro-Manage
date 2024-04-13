@@ -1,56 +1,26 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Cardholder, Dropdown } from '../../components'
-import { useGetDateFilterQuery } from '../../store/api/todoapi'
-import { DateToday } from '../../utils/date'
-import './Board.css'
-import {
-  updateTaskCount,
-  updatePriorityCount,
-} from '../../store/slices/taskSlice'
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Cardholder, Dropdown } from "../../components";
+import { useGetDateFilterQuery } from "../../store/api/todoapi";
+import { DateToday } from "../../utils/date";
+import "./Board.css";
+import { setFlter } from "../../store/slices/filterSlice";
+import { setAnalytics } from "../../store/slices/taskSlice";
 const BoardPage = () => {
-  const [filter, setFilter] = useState('week')
-  const dispatch = useDispatch()
+  const inital = useSelector((state) => state.fil.fil.filterType);
+  const [filter, setFilter] = useState(inital);
+  const dispatch = useDispatch();
   const {
     userInfo: { userName },
-  } = useSelector((state) => state.auth)
-  const { data, refetch, isSuccess } = useGetDateFilterQuery(filter)
+  } = useSelector((state) => state.auth);
+  const { data, refetch, isSuccess } = useGetDateFilterQuery(filter);
   useEffect(() => {
-    refetch()
-  }, [])
-  const BACKLOG = data?.todos.filter((x) => x.label === 'BACKLOG')
-  const TODO = data?.todos.filter((x) => x.label === 'TO-DO')
-  const DONE = data?.todos.filter((x) => x.label === 'DONE')
-  const PROGRESS = data?.todos.filter((x) => x.label === 'PROGRESS')
-  const HighPr = data?.todos
-    .filter((x) => x.label != 'DONE')
-    .filter((x) => x.priority === 'HIGH')
-  const ModeratePr = data?.todos
-    .filter((x) => x.label != 'DONE')
-    .filter((x) => x.priority === 'MODERATE')
-  const LowPr = data?.todos
-    .filter((x) => x.label != 'DONE')
-    .filter((x) => x.priority === 'LOW')
-  const dueDateTasks = data?.todos
-    .filter((x) => x.label != 'DONE')
-    .filter((x) => x.date != null)
+    refetch();
+  }, []);
   if (isSuccess) {
-    dispatch(
-      updateTaskCount({
-        backlogs: BACKLOG.length,
-        todotasks: TODO.length,
-        progresstasks: PROGRESS.length,
-        completedTasks: DONE.length,
-      }),
-    )
-    dispatch(
-      updatePriorityCount({
-        lowPriority: LowPr.length,
-        highPriority: HighPr.length,
-        moderatePriority: ModeratePr.length,
-        dueDateTasks: dueDateTasks.length,
-      }),
-    )
+    dispatch(setFlter(filter));
+    console.log(data);
+    dispatch(setAnalytics(data?.lengths));
   }
 
   return (
@@ -70,29 +40,29 @@ const BoardPage = () => {
       <div className="board-wrapper">
         <div className="board-cards">
           <Cardholder
-            todos={BACKLOG}
+            todos={data?.filteredTodos?.BACKLOG}
             heading="Backlog"
             plusSymbol={false}
           />
           <Cardholder
-            todos={TODO}
+            todos={data?.filteredTodos?.TODO}
             heading="To-do"
             plusSymbol={true}
           />
           <Cardholder
-            todos={PROGRESS}
+            todos={data?.filteredTodos?.PROGRESS}
             heading="Progress"
             plusSymbol={false}
           />
           <Cardholder
             heading="Done"
-            todos={DONE}
+            todos={data?.filteredTodos?.DONE}
             plusSymbol={false}
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BoardPage
+export default BoardPage;

@@ -17,6 +17,7 @@ const InputModal = ({ closeModal }) => {
   const submitHandler = async () => {
     const nonEmpty = tasks.filter(task => task.title != "") 
     if(nonEmpty.length===0) return toast.error('Tasks are mandatory!')
+    if(!priority) return toast.error("Priority is Mandatory!");
     try {
       const response = await addTask({
         title: title,
